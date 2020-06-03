@@ -32,14 +32,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.selectFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ltbFolders = new System.Windows.Forms.ListBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnConvert = new System.Windows.Forms.Button();
             this.Infobox = new System.Windows.Forms.RichTextBox();
             this.cbTrasp = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTransp = new System.Windows.Forms.Label();
             this.cbFormat = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelOutput = new System.Windows.Forms.Label();
             this.checkRecursive = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -52,7 +57,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileMenu});
+            this.FileMenu,
+            this.languageToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -69,6 +75,40 @@
             this.selectFolder.Name = "selectFolder";
             resources.ApplyResources(this.selectFolder, "selectFolder");
             this.selectFolder.Click += new System.EventHandler(this.selectFolder_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.spanishToolStripMenuItem,
+            this.chineseToolStripMenuItem,
+            this.frenchToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // spanishToolStripMenuItem
+            // 
+            this.spanishToolStripMenuItem.Name = "spanishToolStripMenuItem";
+            resources.ApplyResources(this.spanishToolStripMenuItem, "spanishToolStripMenuItem");
+            this.spanishToolStripMenuItem.Click += new System.EventHandler(this.spanishToolStripMenuItem_Click);
+            // 
+            // chineseToolStripMenuItem
+            // 
+            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
+            resources.ApplyResources(this.chineseToolStripMenuItem, "chineseToolStripMenuItem");
+            this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
+            // 
+            // frenchToolStripMenuItem
+            // 
+            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
+            resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
+            this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
             // 
             // ltbFolders
             // 
@@ -111,10 +151,10 @@
             resources.GetString("cbTrasp.Items2")});
             this.cbTrasp.Name = "cbTrasp";
             // 
-            // label1
+            // labelTransp
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.labelTransp, "labelTransp");
+            this.labelTransp.Name = "labelTransp";
             // 
             // cbFormat
             // 
@@ -125,10 +165,10 @@
             resources.ApplyResources(this.cbFormat, "cbFormat");
             this.cbFormat.Name = "cbFormat";
             // 
-            // label2
+            // labelOutput
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.labelOutput, "labelOutput");
+            this.labelOutput.Name = "labelOutput";
             // 
             // checkRecursive
             // 
@@ -141,9 +181,9 @@
             this.groupBox1.Controls.Add(this.btnConvert);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.checkRecursive);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelTransp);
             this.groupBox1.Controls.Add(this.cbTrasp);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.labelOutput);
             this.groupBox1.Controls.Add(this.cbFormat);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
@@ -155,6 +195,7 @@
             this.richTextBox1.BackColor = System.Drawing.Color.LightGray;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -198,13 +239,18 @@
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.RichTextBox Infobox;
         public System.Windows.Forms.ComboBox cbTrasp;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTransp;
         private System.Windows.Forms.ComboBox cbFormat;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelOutput;
         private System.Windows.Forms.CheckBox checkRecursive;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spanishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chineseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem frenchToolStripMenuItem;
     }
 }
 
